@@ -12,7 +12,7 @@ app.use(express.static("public", { index: false }))
 
 io.on("connection", (socket) => {
 	socket.on("user-message", (data) => {
-		socket.broadcast.emit("server-message", data)
+		io.emit("server-message", data)
 	})
 })
 

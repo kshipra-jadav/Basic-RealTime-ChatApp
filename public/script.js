@@ -4,7 +4,6 @@ const chatItems = document.querySelector(".chat-items")
 const socket = io()
 
 socket.on("server-message", (data) => {
-	console.log(data)
 	displayServerMessage(data)
 })
 
@@ -43,6 +42,5 @@ function displayServerMessage(text) {
 }
 
 function sendUserMessage(text) {
-	console.log("user message")
 	socket.emit("user-message", text)
 }
